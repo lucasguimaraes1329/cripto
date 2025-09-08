@@ -1,0 +1,406 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #0a0a0f;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: #0f0f15;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #00f0ff;
+}
+.logo span {
+  color: #9b4dff;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 0;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+nav a:hover,
+nav a.ativo {
+  color: #00f0ff;
+  border-bottom: 2px solid #00f0ff;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #0d0d12, #1a1a25);
+}
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #aaa;
+}
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.btn {
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.roxo {
+  background: #9b4dff;
+  color: #fff;
+}
+.roxo:hover {
+  background: #7c3dd1;
+}
+.verde {
+  background: #00ffcc;
+  color: #000;
+}
+.verde:hover {
+  background: #00d4aa;
+}
+
+/* Seções gerais */
+section {
+  padding: 70px 50px;
+}
+section h1, section h2 {
+  margin-bottom: 25px;
+  font-size: 2em;
+  color: #00f0ff;
+}
+
+/* Preços */
+.precos-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+table {
+  width: 420px;
+  border-collapse: collapse;
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+}
+th, td {
+  padding: 14px;
+  text-align: left;
+}
+thead {
+  background: #1a1a2a;
+}
+.positivo { color: #00ff99; font-weight: bold; }
+.negativo { color: #ff4d6d; font-weight: bold; }
+.grafico img {
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 260px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.card h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 12px rgba(0,255,200,0.2);
+}
+.card p {
+  color: #bbb;
+}
+.card.guia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Comparador */
+.comparador-box {
+  background: #111;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+}
+.comparador-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.comparador-form select,
+.comparador-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+}
+.comparador-form select {
+  flex: 1;
+  background: #1a1a2a;
+  color: #fff;
+}
+.comparador-form button {
+  background: #00ffcc;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+.comparador-form button:hover {
+  background: #00d4aa;
+}
+.resultado {
+  background: #1a1a2a;
+  padding: 20px;
+  border-radius: 8px;
+}
+.resultado h3 {
+  margin-bottom: 10px;
+}
+
+/* Formulário de Contato */
+.formulario {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #111;
+  padding: 25px;
+  border-radius: 10px;
+}
+.formulario label {
+  font-weight: bold;
+  color: #00f0ff;
+}
+.formulario input,
+.formulario textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #1a1a2a;
+  color: #fff;
+}
+.formulario textarea {
+  resize: none;
+}
+.formulario button {
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  background: #00ffcc;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+.formulario button:hover {
+  background: #00d4aa;
+}
+
+/* Páginas de matérias */
+.materia {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  color: #eee;
+}
+.hero-materia {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.hero-materia img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.hero-materia h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.subtitulo {
+  font-size: 1.2em;
+  color: #bbb;
+}
+.resumo {
+  background: #1a1a2a;
+  padding: 20px;
+  border-left: 4px solid #00f0ff;
+  margin: 30px 0;
+  border-radius: 6px;
+}
+.resumo h3 {
+  margin-bottom: 10px;
+  color: #00f0ff;
+}
+.resumo ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+article p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+blockquote {
+  background: #111827;
+  border-left: 4px solid #00ffcc;
+  padding: 15px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #ccc;
+}
+.leia-tambem {
+  margin-top: 40px;
+}
+.leia-tambem h3 {
+  margin-bottom: 10px;
+  color: #00f0ff;
+}
+.leia-tambem ul {
+  list-style: none;
+  padding: 0;
+}
+.leia-tambem ul li {
+  margin-bottom: 8px;
+}
+.leia-tambem ul li a {
+  color: #00ffcc;
+  text-decoration: none;
+}
+.leia-tambem ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #0d0d12;
+  padding: 50px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 25px;
+}
+.footer-col h4 {
+  margin-bottom: 15px;
+  color: #00f0ff;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-col ul li a:hover {
+  color: #00f0ff;
+}
+.newsletter {
+  display: flex;
+  gap: 8px;
+}
+.newsletter input {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #1a1a2a;
+  color: #fff;
+  flex: 1;
+}
+.newsletter button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #00ffcc;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+.newsletter button:hover {
+  background: #00d4aa;
+}
+.copy {
+  text-align: center;
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero h1 {
+    font-size: 2.2em;
+  }
+  .precos-container {
+    flex-direction: column;
+  }
+  .cards {
+    flex-direction: column;
+  }
+  .comparador-form {
+    flex-direction: column;
+  }
+}
