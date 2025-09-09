@@ -324,6 +324,64 @@ blockquote {
   text-decoration: underline;
 }
 
+.comparador-box, .conversor-box {
+  background: #1a1a2a;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.comparador-form, .conversor-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.comparador-form select, .conversor-form select, .conversor-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #111827;
+  color: #fff;
+  font-size: 1em;
+}
+
+.comparador-form button, .conversor-form button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #00ffcc;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.comparador-form button:hover, .conversor-form button:hover {
+  background: #00d4aa;
+}
+
+.resultado {
+  background: #0d0d12;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+  color: #ddd;
+}
+
+.resultado ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resultado ul li {
+  margin-bottom: 8px;
+}
+
+
 /* Footer */
 footer {
   background: #0d0d12;

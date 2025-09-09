@@ -3,8 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comparador - CriptoFuturo</title>
+  <title>Comparador e Conversor - CriptoFuturo</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Valores fictícios de referência (em USD)
+    const taxas = {
+      BTC: 72000,
+      ETH: 3600,
+      SOL: 220,
+      DOGE: 0.18
+    };
+
+    const moedasFiat = {
+      USD: 1,
+      BRL: 5.2,
+      EUR: 0.92,
+      GBP: 0.78
+    };
+
+    function converter() {
+      const cripto = document.getElementById("cripto").value;
+      const valor = parseFloat(document.getElementById("valor").value);
+
+      if (isNaN(valor) || valor <= 0) {
+        document.getElementById("resultadoConversao").innerHTML = "<p>Digite um valor válido.</p>";
+        return;
+      }
+
+      const valorUSD = valor * taxas[cripto]; // Converte cripto para USD
+
+      let resultado = `<h3>Resultado</h3>`;
+      resultado += `<p>${valor} ${cripto} equivale a:</p>`;
+      resultado += `<ul>
+        <li><strong>USD:</strong> $${valorUSD.toFixed(2)}</li>
+        <li><strong>BRL:</strong> R$${(valorUSD * moedasFiat.BRL).toFixed(2)}</li>
+        <li><strong>EUR:</strong> €${(valorUSD * moedasFiat.EUR).toFixed(2)}</li>
+        <li><strong>GBP:</strong> £${(valorUSD * moedasFiat.GBP).toFixed(2)}</li>
+      </ul>`;
+
+      document.getElementById("resultadoConversao").innerHTML = resultado;
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -42,6 +81,27 @@
       <div class="resultado">
         <h3>Resultado</h3>
         <p>Escolha duas moedas para visualizar a comparação.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="conteudo">
+    <h1>Conversor de Criptomoedas</h1>
+    <p>Converta de criptomoedas para Real, Dólar, Euro e Libra.</p>
+    <div class="conversor-box">
+      <div class="conversor-form">
+        <select id="cripto">
+          <option value="BTC">BTC</option>
+          <option value="ETH">ETH</option>
+          <option value="SOL">SOL</option>
+          <option value="DOGE">DOGE</option>
+        </select>
+        <input type="number" id="valor" placeholder="Quantidade" min="0" step="any">
+        <button onclick="converter()">Converter</button>
+      </div>
+      <div class="resultado" id="resultadoConversao">
+        <h3>Resultado</h3>
+        <p>Digite um valor e selecione uma moeda para converter.</p>
       </div>
     </div>
   </section>
