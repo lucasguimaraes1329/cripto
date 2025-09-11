@@ -527,6 +527,40 @@ blockquote {
   margin: 5px 0;
 }
 
+/* Tema claro padrão */
+body.light-mode {
+  background: #f8f9fa;
+  color: #222;
+}
+
+body.light-mode header,
+body.light-mode footer {
+  background: #eaeaea;
+  color: #111;
+}
+
+body.light-mode .card {
+  background: #fff;
+  color: #111;
+}
+
+/* Botão do tema */
+#toggle-theme {
+  margin-left: 15px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #444;
+  color: white;
+  transition: 0.3s;
+}
+
+body.light-mode #toggle-theme {
+  background: #ddd;
+  color: #222;
+}
+
 /* Footer */
 footer {
   background: #0d0d12;
