@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="logo">Cripto<span>Futuro</span></div>
     <nav>
@@ -16,9 +17,11 @@
         <li><a href="comparador.html">Comparador</a></li>
         <li><a href="guias.html" class="ativo">Guias</a></li>
         <li><a href="contato.html">Contato</a></li>
+        <li><a href="simulador.html">Simulador</a></li>
         <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
       </ul>
     </nav>
+    <button id="toggle-theme">🌙</button>
   </header>
 
   <section class="conteudo">
@@ -48,5 +51,13 @@
   <footer>
     <p class="copy">© 2025 CriptoFuturo - Todos os direitos reservados</p>
   </footer>
+
+    <script>
+    const btnTheme = document.getElementById("toggle-theme");
+    btnTheme.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      btnTheme.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
+    });
+  </script>
 </body>
 </html>
