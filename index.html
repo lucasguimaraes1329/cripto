@@ -1,5 +1,6 @@
+<?php include("theme.php"); ?>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="<?php echo isset($theme) ? $theme : ''; ?>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -139,7 +140,7 @@
     <h2>🌍 Adoção Global de Criptomoedas</h2>
     <p>Veja como o uso de criptomoedas cresce pelo mundo.</p>
     <div class="mapa-container">
-      <iframe src="https://ourworldindata.org/grapher/share-crypto-users?tab=map" 
+      <iframe src="https://blocks.wizb.it/" 
               width="100%" height="500" 
               style="border:none; border-radius:8px;">
       </iframe>
@@ -181,11 +182,38 @@
   </footer>
 
   <script>
+    // Função para ler cookie
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
     const btnTheme = document.getElementById("toggle-theme");
-    btnTheme.addEventListener("click", () => {
-      document.body.classList.toggle("light-mode");
-      btnTheme.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
+
+    // Definir tema ao carregar
+    window.addEventListener('DOMContentLoaded', () => {
+      const theme = getCookie('site_theme');
+      if (theme === 'light') {
+        document.body.classList.add('light-mode');
+        btnTheme.textContent = "☀️";
+      } else {
+        document.body.classList.remove('light-mode');
+        btnTheme.textContent = "🌙";
+      }
     });
+
+      btnTheme.addEventListener("click", () => {
+        const isLight = document.body.classList.toggle("light-mode");
+        btnTheme.textContent = isLight ? "☀️" : "🌙";
+        // Salvar escolha via PHP
+        fetch('save_theme.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `theme=${isLight ? 'light' : 'dark'}`
+        });
+      });
   </script>
 </body>
 </html>

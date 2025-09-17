@@ -1,5 +1,6 @@
+<?php include("theme.php"); ?>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="<?php echo isset($theme) ? $theme : ''; ?>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="logo">Cripto<span>Futuro</span></div>
     <nav>
@@ -22,9 +22,7 @@
       </ul>
     </nav>
     <button id="toggle-theme">🌙</button>
-  </header>
-
-  <section class="conteudo">
+    </header>
     <h1>Guias Educacionais</h1>
     <div class="cards">
       <div class="card guia">
@@ -60,4 +58,37 @@
     });
   </script>
 </body>
+<script>
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+  }
+  window.addEventListener('DOMContentLoaded', () => {
+    const theme = getCookie('site_theme');
+    if (theme === 'light') {
+      document.body.classList.add('light-mode');
+      btnTheme.textContent = "☀️";
+    } else if (theme === 'dark') {
+      document.body.classList.remove('light-mode');
+      btnTheme.textContent = "🌙";
+    } else {
+      if (document.documentElement.classList.contains('light-mode')) {
+        btnTheme.textContent = "☀️";
+      } else {
+        btnTheme.textContent = "🌙";
+      }
+    }
+  });
+  btnTheme.addEventListener("click", () => {
+    const isLight = document.body.classList.toggle("light-mode");
+    btnTheme.textContent = isLight ? "☀️" : "🌙";
+    fetch('save_theme.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `theme=${isLight ? 'light' : 'dark'}`
+    });
+  });
+</script>
 </html>

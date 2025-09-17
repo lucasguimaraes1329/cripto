@@ -1,5 +1,6 @@
+<?php include("theme.php"); ?>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="<?php echo isset($theme) ? $theme : ''; ?>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,33 +73,63 @@
     };
 
     function simular() {
-      const valor = parseFloat(document.getElementById("valorInvestido").value);
+      const valorInvestido = parseFloat(document.getElementById("valorInvestido").value);
       const moeda = document.getElementById("moedaInvestimento").value;
       const ano = document.getElementById("anoInvestimento").value;
 
-      if (isNaN(valor) || valor <= 0) {
-        document.getElementById("resultadoSimulador").innerHTML = "<p>Digite um valor válido.</p>";
+      const mensagens = {
+        valorInvalido: "Digite um valor válido."
+      };
+
+      if (isNaN(valorInvestido) || valorInvestido <= 0) {
+        document.getElementById("resultadoSimulador").innerHTML = `<p>${mensagens.valorInvalido}</p>`;
         return;
       }
 
       const precoAntigo = historico[moeda][ano];
       const precoAtual = atuais[moeda];
 
-      const quantidade = valor / precoAntigo;
+      const quantidade = valorInvestido / precoAntigo;
       const valorHoje = quantidade * precoAtual;
 
       document.getElementById("resultadoSimulador").innerHTML = `
         <h3>Resultado</h3>
-        <p>Se você tivesse investido <strong>$${valor}</strong> em ${moeda} em ${ano},</p>
+        <p>Se você tivesse investido <strong>$${valorInvestido}</strong> em ${moeda} em ${ano},</p>
         <p>hoje teria aproximadamente <strong>$${valorHoje.toFixed(2)}</strong>.</p>
       `;
     }
 
-    // Dark/Light mode
+    // Função para ler cookie
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
     const btnTheme = document.getElementById("toggle-theme");
+
+    // Definir tema ao carregar
+    window.addEventListener('DOMContentLoaded', () => {
+      const theme = getCookie('site_theme');
+      if (theme === 'light') {
+        document.body.classList.add('light-mode');
+        btnTheme.textContent = "☀️";
+      } else {
+        document.body.classList.remove('light-mode');
+        btnTheme.textContent = "🌙";
+      }
+    });
+
     btnTheme.addEventListener("click", () => {
-      document.body.classList.toggle("light-mode");
-      btnTheme.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
+      const isLight = document.body.classList.toggle("light-mode");
+      btnTheme.textContent = isLight ? "☀️" : "🌙";
+      // Salvar escolha via PHP
+      fetch('save_theme.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `theme=${isLight ? 'light' : 'dark'}`
+      });
     });
   </script>
 </body>
