@@ -19,6 +19,7 @@
         <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
+    <button id="toggle-theme" aria-label="Alternar tema">🌙</button>
   </header>
     <section class="materia">
         <div class="hero-materia">
@@ -51,14 +52,6 @@
             investidores menores podem ser prejudicados por burocracias e impostos mais altos.
             </p>
         </article>
-
-        <div class="leia-tambem">
-            <h3>📖 Leia também</h3>
-            <ul>
-            <li><a href="noticia-bitcoin.html">Bitcoin ultrapassa nova máxima histórica</a></li>
-            <li><a href="noticia-ethereum.html">Ethereum 2.0 traz mudanças para o mercado</a></li>
-            </ul>
-        </div>
     </section>
   <footer>
     <div class="footer-container">
@@ -91,30 +84,30 @@
     if (parts.length === 2) return parts.pop().split(';').shift();
     return null;
   }
-  const btnTheme = document.getElementById("toggle-theme");
-  window.addEventListener('DOMContentLoaded', () => {
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const btnTheme = document.getElementById("toggle-theme");
+    if (!btnTheme) return;
+
     const theme = getCookie('site_theme');
     if (theme === 'light') {
       document.body.classList.add('light-mode');
       btnTheme.textContent = "☀️";
-    } else if (theme === 'dark') {
+    } else {
       document.body.classList.remove('light-mode');
       btnTheme.textContent = "🌙";
-    } else {
-      if (document.documentElement.classList.contains('light-mode')) {
-        btnTheme.textContent = "☀️";
-      } else {
-        btnTheme.textContent = "🌙";
-      }
     }
-  });
-  btnTheme.addEventListener("click", () => {
-    const isLight = document.body.classList.toggle("light-mode");
-    btnTheme.textContent = isLight ? "☀️" : "🌙";
-    fetch('save_theme.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `theme=${isLight ? 'light' : 'dark'}`
+
+    btnTheme.addEventListener("click", () => {
+      const isLight = document.body.classList.toggle("light-mode");
+      btnTheme.textContent = isLight ? "☀️" : "🌙";
+      document.cookie = `site_theme=${isLight ? 'light' : 'dark'}; path=/`;
+
+      fetch('save_theme.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `theme=${isLight ? 'light' : 'dark'}`
+      });
     });
   });
 </script>

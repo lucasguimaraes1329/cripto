@@ -4,108 +4,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore nossos guias educacionais sobre criptomoedas, blockchain e DeFi.">
   <title>Guias - CriptoFuturo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">Cripto<span>Futuro</span></div>
+   <!-- Header -->
+   <header>
+    <div class="logo" aria-label="Logo CriptoFuturo">Cripto<span>Futuro</span></div>
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="noticias.html">Notícias</a></li>
         <li><a href="comparador.html">Comparador</a></li>
-        <li><a href="guias.html" class="ativo">Guias</a></li>
+        <li><a href="guias.html" class="ativo" aria-current="page">Guias</a></li>
         <li><a href="contato.html">Contato</a></li>
-<<<<<<< HEAD
-=======
         <li><a href="simulador.html">Simulador</a></li>
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
         <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
       </ul>
     </nav>
-    <button id="toggle-theme">🌙</button>
-    </header>
-    <h1>Guias Educacionais</h1>
-    <div class="cards">
-      <div class="card guia">
-        <a href="guia-blockchain.html">
-<<<<<<< HEAD
-          <img src="img/blockchain.webp" alt="Regulamentações">
-=======
-          <img src="img/blockchain.webp" alt="Blockchain">
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
-          <h3>O que é Blockchain?</h3>
-        </a>
-      </div>
-      <div class="card guia">
-<<<<<<< HEAD
-        <a href="guia-investir.html">
-          <img src="img/seguranca.jpg" alt="Regulamentações">
-=======
-        <a href="guia-investimento.html">
-          <img src="img/seguranca.jpg" alt="Investimento seguro">
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
-          <h3>Como investir em criptomoedas com segurança</h3>
-        </a>
-      </div>
-      <div class="card guia">
-<<<<<<< HEAD
-        <a href="guia-delfi.html">
-          <img src="img/defi.jpg" alt="Regulamentações">
-=======
-        <a href="guia-defi.html">
-          <img src="img/defi.jpg" alt="DeFi">
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
-          <h3>DeFi explicado</h3>
-        </a>
+    <button id="toggle-theme" aria-label="Alternar tema">🌙</button>
+  </header>
+
+  <main class="conteudo">
+    <div class="container">
+      <h1>Guias Educacionais</h1>
+      <div class="cards">
+        <div class="card guia">
+          <a href="guia-blockchain.html">
+            <img src="img/blockchain.webp" alt="Blockchain">
+            <h3>O que é Blockchain?</h3>
+          </a>
+        </div>
+        <div class="card guia">
+          <a href="guia-investimento.html">
+            <img src="img/seguranca.jpg" alt="Investimento seguro">
+            <h3>Como investir em criptomoedas com segurança</h3>
+          </a>
+        </div>
+        <div class="card guia">
+          <a href="guia-defi.html">
+            <img src="img/defi.jpg" alt="DeFi">
+            <h3>DeFi explicado</h3>
+          </a>
+        </div>
+        <div class="card guia">
+          <a href="guia-wallets.html">
+            <img src="img/wallets.jpg" alt="Wallets">
+            <h3>Wallets para Criptomoedas</h3>
+          </a>
+        </div>
+        <div class="card guia">
+          <a href="guia-nfts.html">
+            <img src="img/nft.jfif" alt="nft">
+            <h3>NFTs em 2025</h3>
+          </a>
+        </div>
+        <div class="card guia">
+          <a href="guia-staking.html">
+            <img src="img/staking.png" alt="nft">
+            <h3>Staking de Criptomoedas</h3>
+          </a>
+        </div>
       </div>
     </div>
-  </section>
+  </main>
 
   <footer>
-    <p class="copy">© 2025 CriptoFuturo - Todos os direitos reservados</p>
+    <div class="container">
+      <p class="copy">© 2025 CriptoFuturo - Todos os direitos reservados</p>
+    </div>
   </footer>
 
-    <script>
-    const btnTheme = document.getElementById("toggle-theme");
-    btnTheme.addEventListener("click", () => {
-      document.body.classList.toggle("light-mode");
-      btnTheme.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
-    });
-  </script>
-</body>
-<script>
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-    return null;
-  }
-  window.addEventListener('DOMContentLoaded', () => {
-    const theme = getCookie('site_theme');
-    if (theme === 'light') {
-      document.body.classList.add('light-mode');
-      btnTheme.textContent = "☀️";
-    } else if (theme === 'dark') {
-      document.body.classList.remove('light-mode');
-      btnTheme.textContent = "🌙";
-    } else {
-      if (document.documentElement.classList.contains('light-mode')) {
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnTheme = document.getElementById("toggle-theme");
+      const getCookie = (name) => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        return parts.length === 2 ? parts.pop().split(';').shift() : null;
+      };
+
+      const theme = getCookie('site_theme');
+      if (theme === 'light') {
+        document.body.classList.add('light-mode');
         btnTheme.textContent = "☀️";
       } else {
         btnTheme.textContent = "🌙";
       }
-    }
-  });
-  btnTheme.addEventListener("click", () => {
-    const isLight = document.body.classList.toggle("light-mode");
-    btnTheme.textContent = isLight ? "☀️" : "🌙";
-    fetch('save_theme.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `theme=${isLight ? 'light' : 'dark'}`
+
+      btnTheme.addEventListener("click", () => {
+        const isLight = document.body.classList.toggle("light-mode");
+        btnTheme.textContent = isLight ? "☀️" : "🌙";
+        fetch('save_theme.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `theme=${isLight ? 'light' : 'dark'}`
+        });
+      });
     });
-  });
-</script>
+  </script>
+</body>
 </html>

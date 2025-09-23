@@ -1,6 +1,6 @@
 <?php include("theme.php"); ?>
 <!DOCTYPE html>
-<html lang="pt-BR" class="<?php echo isset($theme) ? $theme : ''; ?>">
+<html lang="pt-BR" class="<?php echo isset($theme) ? htmlspecialchars($theme) : 'dark-mode'; ?>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,22 +10,19 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="logo">Cripto<span>Futuro</span></div>
+    <div class="logo" aria-label="Logo CriptoFuturo">Cripto<span>Futuro</span></div>
     <nav>
       <ul>
-        <li><a href="index.html" class="ativo">Início</a></li>
+        <li><a href="index.html" class="ativo" aria-current="page">Início</a></li>
         <li><a href="noticias.html">Notícias</a></li>
         <li><a href="comparador.html">Comparador</a></li>
         <li><a href="guias.html">Guias</a></li>
         <li><a href="contato.html">Contato</a></li>
-<<<<<<< HEAD
-=======
         <li><a href="simulador.html">Simulador</a></li>
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
         <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
       </ul>
     </nav>
-    <button id="toggle-theme">🌙</button>
+    <button id="toggle-theme" aria-label="Alternar tema">🌙</button>
   </header>
 
   <!-- Hero -->
@@ -57,25 +54,25 @@
           <tbody>
             <tr>
               <td>BTC</td>
-              <td>$41,111.34</td>
+              <td>$72,000.00</td>
               <td class="positivo">+2.13%</td>
               <td class="positivo">+8.37%</td>
             </tr>
             <tr>
               <td>ETH</td>
-              <td>$2,927.22</td>
+              <td>$3,600.00</td>
               <td class="negativo">-1.23%</td>
               <td class="positivo">+3.23%</td>
             </tr>
             <tr>
               <td>SOL</td>
-              <td>$91.58</td>
+              <td>$220.00</td>
               <td class="negativo">-9.95%</td>
               <td class="positivo">+1.58%</td>
             </tr>
             <tr>
               <td>DOGE</td>
-              <td>$0.056</td>
+              <td>$0.18</td>
               <td class="positivo">+2.05%</td>
               <td class="positivo">+2.98%</td>
             </tr>
@@ -91,35 +88,23 @@
     <div class="cards">
       <div class="card">
         <a href="noticia-bitcoin.html">
-          <img src="img/bitcoin.webp" alt="Bitcoin">
+          <img src="img/bitcoin.webp" alt="Notícia sobre Bitcoin">
           <h3>Bitcoin ultrapassa nova máxima histórica</h3>
           <p>Investidores celebram a nova máxima histórica do BTC...</p>
         </a>
       </div>
       <div class="card">
         <a href="noticia-ethereum.html">
-<<<<<<< HEAD
-            <img src="img/ethereum.jpg" alt="Ethereum">
-            <h3>Ethereum 2.0 traz mudanças para o mercado</h3>
-                <p>A atualização promete taxas menores e maior escalabilidade...</p>
-=======
-          <img src="img/ethereum.jpg" alt="Ethereum">
+          <img src="img/ethereum.jpg" alt="Notícia sobre Ethereum">
           <h3>Ethereum 2.0 traz mudanças para o mercado</h3>
           <p>A atualização promete taxas menores e maior escalabilidade...</p>
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
         </a>
       </div>
       <div class="card">
         <a href="noticia-regulamentacoes.html">
-<<<<<<< HEAD
-            <img src="img/regulamentacoes.jpg" alt="Regulamentações">
-            <h3>Novas regulamentações podem impactar investidores</h3>
-                <p>Medidas de fiscalização podem mudar a forma como investidores atuam...</p>
-=======
-          <img src="img/regulamentacoes.jpg" alt="Regulamentações">
+          <img src="img/regulamentacoes.jpg" alt="Notícia sobre regulamentações">
           <h3>Novas regulamentações podem impactar investidores</h3>
           <p>Medidas de fiscalização podem mudar a forma como investidores atuam...</p>
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
         </a>
       </div>
     </div>
@@ -130,38 +115,20 @@
     <h2>📘 Guias Educacionais</h2>
     <div class="cards">
       <div class="card guia">
-<<<<<<< HEAD
-          <a href="guia-blockchain.html">
-            <img src="img/blockchain.webp" alt="Regulamentações">
-            <h3>O que é Blockchain?</h3>
-          </a>
-      </div>
-      <div class="card guia">
-        <a href="guia-investir.html">
-          <img src="img/seguranca.jpg" alt="Regulamentações">
-=======
         <a href="guia-blockchain.html">
-          <img src="img/blockchain.webp" alt="Blockchain">
+          <img src="img/blockchain.webp" alt="Guia sobre Blockchain">
           <h3>O que é Blockchain?</h3>
         </a>
       </div>
       <div class="card guia">
         <a href="guia-investimento.html">
-          <img src="img/seguranca.jpg" alt="Investimento seguro">
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
+          <img src="img/seguranca.jpg" alt="Guia sobre investimento seguro">
           <h3>Como investir em criptomoedas com segurança</h3>
         </a>
       </div>
       <div class="card guia">
-<<<<<<< HEAD
-        <a href="guia-delfi.html">
-          <img src="img/defi.jpg" alt="Regulamentações">
-          <h3>DeFi explicado</h3>
-        </a>
-      </div>
-=======
         <a href="guia-defi.html">
-          <img src="img/defi.jpg" alt="DeFi">
+          <img src="img/defi.jpg" alt="Guia sobre DeFi">
           <h3>DeFi explicado</h3>
         </a>
       </div>
@@ -174,49 +141,20 @@
     <p>Veja como o uso de criptomoedas cresce pelo mundo.</p>
     <div class="mapa-container">
       <iframe src="https://blocks.wizb.it/" 
-              width="100%" height="500" 
-              style="border:none; border-radius:8px;">
-      </iframe>
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
+              width="100%" 
+              height="500" 
+              style="border:none; border-radius:8px;" 
+              title="Mapa de adoção global de criptomoedas"
+              sandbox="allow-scripts allow-same-origin"></iframe>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="footer-container">
-      <div class="footer-col">
-        <h4>Links</h4>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="noticias.html">Notícias</a></li>
-          <li><a href="comparador.html">Comparador</a></li>
-          <li><a href="guias.html">Guias</a></li>
-          <li><a href="contato.html">Contato</a></li>
-          <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Siga-nos</h4>
-        <ul>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">YouTube</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Newsletter</h4>
-        <p>Receba novidades sobre o mercado cripto:</p>
-        <form class="newsletter">
-          <input type="email" placeholder="Digite seu email">
-          <button type="submit">Inscrever</button>
-        </form>
-      </div>
-    </div>
     <p class="copy">© 2025 CriptoFuturo - Todos os direitos reservados</p>
   </footer>
 
   <script>
-    // Função para ler cookie
     function getCookie(name) {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
@@ -224,10 +162,10 @@
       return null;
     }
 
-    const btnTheme = document.getElementById("toggle-theme");
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnTheme = document.getElementById("toggle-theme");
+      if (!btnTheme) return;
 
-    // Definir tema ao carregar
-    window.addEventListener('DOMContentLoaded', () => {
       const theme = getCookie('site_theme');
       if (theme === 'light') {
         document.body.classList.add('light-mode');
@@ -236,18 +174,18 @@
         document.body.classList.remove('light-mode');
         btnTheme.textContent = "🌙";
       }
-    });
 
       btnTheme.addEventListener("click", () => {
         const isLight = document.body.classList.toggle("light-mode");
         btnTheme.textContent = isLight ? "☀️" : "🌙";
-        // Salvar escolha via PHP
+
         fetch('save_theme.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: `theme=${isLight ? 'light' : 'dark'}`
-        });
+        }).catch(error => console.error('Erro ao salvar tema:', error));
       });
+    });
   </script>
 </body>
 </html>

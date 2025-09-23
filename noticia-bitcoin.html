@@ -21,50 +21,44 @@
     </nav>
   </header>
 
-  <section class="materia">
-    <div class="hero-materia">
-      <img src="img/bitcoin.webp" alt="Bitcoin recorde">
-      <h1>Bitcoin ultrapassa nova máxima histórica</h1>
-      <p class="subtitulo">A maior criptomoeda do mundo superou os <strong>$70.000</strong>, impulsionada pela entrada de investidores institucionais e ETFs.</p>
-    </div>
+  <main>
+    <section class="materia">
+      <div class="hero-materia">
+        <img src="img/bitcoin.webp" alt="Bitcoin recorde">
+        <h1>Bitcoin ultrapassa nova máxima histórica</h1>
+        <p class="subtitulo">A maior criptomoeda do mundo superou os <strong>$70.000</strong>, impulsionada pela entrada de investidores institucionais e ETFs.</p>
+      </div>
 
-    <div class="resumo">
-      <h3>📌 Pontos-chave</h3>
-      <ul>
-        <li>Bitcoin bate recorde acima dos $70.000.</li>
-        <li>Investidores institucionais impulsionam a alta.</li>
-        <li>Especialistas alertam sobre volatilidade.</li>
-      </ul>
-    </div>
+      <div class="resumo">
+        <h3>📌 Pontos-chave</h3>
+        <ul>
+          <li>Bitcoin bate recorde acima dos $70.000.</li>
+          <li>Investidores institucionais impulsionam a alta.</li>
+          <li>Especialistas alertam sobre volatilidade.</li>
+        </ul>
+      </div>
 
-    <article>
-      <p>
-        O <strong>Bitcoin (BTC)</strong> atingiu uma nova máxima histórica, ultrapassando os <strong>$70.000</strong>. O movimento reflete a 
-        <em>confiança crescente</em> de investidores institucionais e a popularidade de ETFs que permitem exposição à criptomoeda.
-      </p>
+      <article>
+        <p>
+          O <strong>Bitcoin (BTC)</strong> atingiu uma nova máxima histórica, ultrapassando os <strong>$70.000</strong>. O movimento reflete a 
+          <em>confiança crescente</em> de investidores institucionais e a popularidade de ETFs que permitem exposição à criptomoeda.
+        </p>
 
-      <p>
-        Segundo analistas, a alta também foi alimentada pela <strong>demanda de varejo</strong>, com milhões de novos investidores entrando no mercado 
-        nos últimos meses.
-      </p>
+        <p>
+          Segundo analistas, a alta também foi alimentada pela <strong>demanda de varejo</strong>, com milhões de novos investidores entrando no mercado 
+          nos últimos meses.
+        </p>
 
-      <blockquote>
-        “Estamos vendo um ciclo diferente, com mais maturidade no mercado e maior participação institucional.” — <em>Lucas Andrade, analista de criptoativos</em>.
-      </blockquote>
+        <blockquote>
+          “Estamos vendo um ciclo diferente, com mais maturidade no mercado e maior participação institucional.” — <em>Lucas Andrade, analista de criptoativos</em>.
+        </blockquote>
 
-      <p>
-        No entanto, especialistas lembram que o mercado cripto continua <strong>altamente volátil</strong> e recomendam cautela, especialmente para investidores iniciantes.
-      </p>
-    </article>
-
-    <div class="leia-tambem">
-      <h3>📖 Leia também</h3>
-      <ul>
-        <li><a href="noticia-ethereum.html">Ethereum 2.0 traz mudanças para o mercado</a></li>
-        <li><a href="noticia-regulamentacoes.html">Novas regulamentações podem impactar investidores</a></li>
-      </ul>
-    </div>
-  </section>
+        <p>
+          No entanto, especialistas lembram que o mercado cripto continua <strong>altamente volátil</strong> e recomendam cautela, especialmente para investidores iniciantes.
+        </p>
+      </article>
+    </section>
+  </main>
 
   <footer>
     <div class="footer-container">
@@ -89,39 +83,39 @@
     </div>
     <p class="copy">© 2025 CriptoFuturo - Todos os direitos reservados</p>
   </footer>
-</body>
-<script>
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-    return null;
-  }
-  const btnTheme = document.getElementById("toggle-theme");
-  window.addEventListener('DOMContentLoaded', () => {
-    const theme = getCookie('site_theme');
-    if (theme === 'light') {
-      document.body.classList.add('light-mode');
-      btnTheme.textContent = "☀️";
-    } else if (theme === 'dark') {
-      document.body.classList.remove('light-mode');
-      btnTheme.textContent = "🌙";
-    } else {
-      if (document.documentElement.classList.contains('light-mode')) {
-        btnTheme.textContent = "☀️";
-      } else {
-        btnTheme.textContent = "🌙";
-      }
+
+  <script>
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
     }
-  });
-  btnTheme.addEventListener("click", () => {
-    const isLight = document.body.classList.toggle("light-mode");
-    btnTheme.textContent = isLight ? "☀️" : "🌙";
-    fetch('save_theme.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `theme=${isLight ? 'light' : 'dark'}`
+
+    const btnTheme = document.getElementById("toggle-theme");
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const theme = getCookie('site_theme');
+      if (theme === 'light') {
+        document.body.classList.add('light-mode');
+        btnTheme.textContent = "☀️";
+      } else if (theme === 'dark') {
+        document.body.classList.remove('light-mode');
+        btnTheme.textContent = "🌙";
+      } else {
+        btnTheme.textContent = document.documentElement.classList.contains('light-mode') ? "☀️" : "🌙";
+      }
     });
-  });
-</script>
+
+    btnTheme.addEventListener("click", () => {
+      const isLight = document.body.classList.toggle("light-mode");
+      btnTheme.textContent = isLight ? "☀️" : "🌙";
+      fetch('save_theme.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `theme=${isLight ? 'light' : 'dark'}`
+      });
+    });
+  </script>
+</body>
 </html>

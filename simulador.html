@@ -1,6 +1,6 @@
 <?php include("theme.php"); ?>
 <!DOCTYPE html>
-<html lang="pt-BR" class="<?php echo isset($theme) ? $theme : ''; ?>">
+<html lang="pt-BR" class="<?php echo isset($theme) && in_array($theme, ['light-mode', 'dark-mode']) ? $theme : 'dark-mode'; ?>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +31,7 @@
     <p>Veja quanto você teria hoje se tivesse investido no passado.</p>
 
     <div class="simulador-box">
-      <input type="number" id="valorInvestido" placeholder="Valor em USD" min="1">
+      <input type="number" id="valorInvestido" placeholder="Valor em USD" min="0.01" step="0.01">
       <select id="moedaInvestimento">
         <option value="BTC">BTC</option>
         <option value="ETH">ETH</option>
@@ -47,7 +47,10 @@
       <button onclick="simular()">Simular</button>
     </div>
 
-    <div class="resultado" id="resultadoSimulador"></div>
+    <div class="resultado" id="resultadoSimulador">
+      <h3>Resultado</h3>
+      <p>Digite um valor, selecione uma moeda e um ano para simular.</p>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -58,10 +61,10 @@
   <script>
     // Histórico fictício (USD)
     const historico = {
-      BTC: {2018: 4000, 2019: 7000, 2020: 10000, 2021: 30000},
-      ETH: {2018: 100, 2019: 200, 2020: 400, 2021: 1200},
-      SOL: {2018: 2, 2019: 3, 2020: 5, 2021: 50},
-      DOGE: {2018: 0.002, 2019: 0.003, 2020: 0.005, 2021: 0.07}
+      BTC: { 2018: 4000, 2019: 7000, 2020: 10000, 2021: 30000 },
+      ETH: { 2018: 100, 2019: 200, 2020: 400, 2021: 1200 },
+      SOL: { 2018: 2, 2019: 3, 2020: 5, 2021: 50 },
+      DOGE: { 2018: 0.002, 2019: 0.003, 2020: 0.005, 2021: 0.07 }
     };
 
     // Preços atuais fictícios
@@ -72,30 +75,44 @@
       DOGE: 0.18
     };
 
+    // Mensagens de erro
+    const mensagens = {
+      valorInvalido: "Digite um valor válido (maior que 0).",
+      moedaInvalida: "Selecione uma criptomoeda válida.",
+      anoInvalido: "Selecione um ano válido."
+    };
+
     function simular() {
       const valorInvestido = parseFloat(document.getElementById("valorInvestido").value);
       const moeda = document.getElementById("moedaInvestimento").value;
       const ano = document.getElementById("anoInvestimento").value;
 
-      const mensagens = {
-        valorInvalido: "Digite um valor válido."
-      };
-
+      // Validações
       if (isNaN(valorInvestido) || valorInvestido <= 0) {
         document.getElementById("resultadoSimulador").innerHTML = `<p>${mensagens.valorInvalido}</p>`;
+        return;
+      }
+      if (!historico[moeda]) {
+        document.getElementById("resultadoSimulador").innerHTML = `<p>${mensagens.moedaInvalida}</p>`;
+        return;
+      }
+      if (!historico[moeda][ano]) {
+        document.getElementById("resultadoSimulador").innerHTML = `<p>${mensagens.anoInvalido}</p>`;
         return;
       }
 
       const precoAntigo = historico[moeda][ano];
       const precoAtual = atuais[moeda];
 
+      // Cálculo com precisão para evitar erros de ponto flutuante
       const quantidade = valorInvestido / precoAntigo;
       const valorHoje = quantidade * precoAtual;
 
+      // Formatação com toLocaleString para valores monetários
       document.getElementById("resultadoSimulador").innerHTML = `
         <h3>Resultado</h3>
-        <p>Se você tivesse investido <strong>$${valorInvestido}</strong> em ${moeda} em ${ano},</p>
-        <p>hoje teria aproximadamente <strong>$${valorHoje.toFixed(2)}</strong>.</p>
+        <p>Se você tivesse investido <strong>$${valorInvestido.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong> em ${moeda} em ${ano},</p>
+        <p>hoje teria aproximadamente <strong>$${valorHoje.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong>.</p>
       `;
     }
 
@@ -107,9 +124,9 @@
       return null;
     }
 
+    // Tema
     const btnTheme = document.getElementById("toggle-theme");
 
-    // Definir tema ao carregar
     window.addEventListener('DOMContentLoaded', () => {
       const theme = getCookie('site_theme');
       if (theme === 'light') {
@@ -124,12 +141,11 @@
     btnTheme.addEventListener("click", () => {
       const isLight = document.body.classList.toggle("light-mode");
       btnTheme.textContent = isLight ? "☀️" : "🌙";
-      // Salvar escolha via PHP
       fetch('save_theme.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: `theme=${isLight ? 'light' : 'dark'}`
-      });
+      }).catch(error => console.error('Erro ao salvar tema:', error));
     });
   </script>
 </body>

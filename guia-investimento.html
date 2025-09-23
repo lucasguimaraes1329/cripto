@@ -1,6 +1,6 @@
 <?php include("theme.php"); ?>
 <!DOCTYPE html>
-<html lang="pt-BR" class="<?php echo isset($theme) ? $theme : ''; ?>">
+<html lang="pt-BR" class="<?php echo isset($theme) ? htmlspecialchars($theme) : ''; ?>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="logo">Cripto<span>Futuro</span></div>
     <nav>
@@ -19,8 +20,10 @@
         <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
+    <button id="toggle-theme" aria-label="Alternar tema">🌙</button>
   </header>
 
+  <!-- Conteúdo principal -->
   <main class="conteudo guia-detalhe">
     <article>
       <h1>🛡️ Como investir em criptomoedas com segurança</h1>
@@ -33,7 +36,7 @@
         <h2>📌 Dicas de segurança</h2>
         <ul class="guia-lista">
           <li>🔑 <strong>Use carteiras seguras:</strong> prefira <em>hardware wallets</em> para armazenar grandes quantias.</li>
-          <li>🛡️ <strong>Ative autenticação em dois fatores (2FA)</strong> nas corretoras.</li>
+          <li>🛡️ <strong>Ative autenticação em dois fatores (2FA):</strong> sempre nas corretoras.</li>
           <li>📚 <strong>Pesquise antes de investir:</strong> não confie apenas em recomendações.</li>
           <li>🚫 <strong>Evite promessas de lucro fácil:</strong> golpes são comuns nesse mercado.</li>
         </ul>
@@ -61,42 +64,45 @@
     </article>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p class="copy">© 2025 CriptoFuturo - Todos os direitos reservados</p>
   </footer>
-</body>
-<script>
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-    return null;
-  }
-  const btnTheme = document.getElementById("toggle-theme");
-  window.addEventListener('DOMContentLoaded', () => {
-    const theme = getCookie('site_theme');
-    if (theme === 'light') {
-      document.body.classList.add('light-mode');
-      btnTheme.textContent = "☀️";
-    } else if (theme === 'dark') {
-      document.body.classList.remove('light-mode');
-      btnTheme.textContent = "🌙";
-    } else {
-      if (document.documentElement.classList.contains('light-mode')) {
+
+  <!-- Script de tema -->
+  <script>
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnTheme = document.getElementById("toggle-theme");
+      if (!btnTheme) return;
+
+      const theme = getCookie('site_theme');
+
+      if (theme === 'light') {
+        document.body.classList.add('light-mode');
         btnTheme.textContent = "☀️";
       } else {
+        document.body.classList.remove('light-mode');
         btnTheme.textContent = "🌙";
       }
-    }
-  });
-  btnTheme.addEventListener("click", () => {
-    const isLight = document.body.classList.toggle("light-mode");
-    btnTheme.textContent = isLight ? "☀️" : "🌙";
-    fetch('save_theme.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `theme=${isLight ? 'light' : 'dark'}`
+
+      btnTheme.addEventListener("click", () => {
+        const isLight = document.body.classList.toggle("light-mode");
+        btnTheme.textContent = isLight ? "☀️" : "🌙";
+
+        fetch('save_theme.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `theme=${isLight ? 'light' : 'dark'}`
+        });
+      });
     });
-  });
-</script>
+  </script>
+</body>
 </html>

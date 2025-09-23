@@ -1,0 +1,102 @@
+<?php include("theme.php"); ?>
+<!DOCTYPE html>
+<html lang="pt-BR" class="<?php echo isset($theme) ? htmlspecialchars($theme) : 'dark-mode'; ?>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guia completo sobre wallets de criptomoedas: tipos, segurança e como escolher.">
+  <title>Guia de Wallets: Como Armazenar Suas Criptomoedas com Segurança - CriptoFuturo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo" aria-label="Logo CriptoFuturo">Cripto<span>Futuro</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="comparador.html">Comparador</a></li>
+        <li><a href="guias.html" class="ativo" aria-current="page">Guias</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="simulador.html">Simulador</a></li>
+        <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
+      </ul>
+    </nav>
+    <button id="toggle-theme" aria-label="Alternar tema">🌙</button>
+  </header>
+
+  <!-- Conteúdo do Guia -->
+  <main class="guia-detalhe">
+    <h1>Guia Completo de Wallets para Criptomoedas</h1>
+
+    <p>Uma wallet é essencial para armazenar, enviar e receber criptomoedas. Este guia cobre os tipos disponíveis, dicas de segurança e como escolher a ideal para você.</p>
+
+    <div class="guia-secao">
+      <h2>Tipos de Wallets</h2>
+      <ul class="guia-lista">
+        <li><strong>Hot Wallets:</strong> Conectadas à internet (ex: MetaMask). Convenientes, mas menos seguras.</li>
+        <li><strong>Cold Wallets:</strong> Offline (ex: Ledger, Trezor). Mais seguras para grandes quantias.</li>
+        <li><strong>Paper Wallets:</strong> Chaves impressas. Baratas, mas vulneráveis a danos físicos.</li>
+        <li><strong>Mobile Wallets:</strong> Apps para smartphone (ex: Trust Wallet). Portáteis e multifuncionais.</li>
+      </ul>
+    </div>
+
+    <div class="guia-secao">
+      <h2>Dicas de Segurança</h2>
+      <ul class="guia-lista">
+        <li>Ative autenticação de dois fatores (2FA).</li>
+        <li>Nunca compartilhe suas chaves privadas.</li>
+        <li>Use wallets com suporte a multi-signature.</li>
+        <li>Faça backups regulares e armazene-os offline.</li>
+      </ul>
+    </div>
+
+    <div class="guia-secao">
+      <h2>Como Escolher a Wallet Certa</h2>
+      <p>Considere o valor a armazenar, frequência de uso e compatibilidade com suas moedas. Para iniciantes, comece com uma hot wallet; para hodlers, opte por cold storage.</p>
+    </div>
+
+    <a href="guias.html" class="btn-voltar">← Voltar aos Guias</a>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p class="copy">© 2025 CriptoFuturo - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnTheme = document.getElementById("toggle-theme");
+      if (!btnTheme) return;
+
+      const theme = getCookie('site_theme');
+      if (theme === 'light') {
+        document.body.classList.add('light-mode');
+        btnTheme.textContent = "☀️";
+      } else {
+        document.body.classList.remove('light-mode');
+        btnTheme.textContent = "🌙";
+      }
+
+      btnTheme.addEventListener("click", () => {
+        const isLight = document.body.classList.toggle("light-mode");
+        btnTheme.textContent = isLight ? "☀️" : "🌙";
+
+        fetch('save_theme.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `theme=${isLight ? 'light' : 'dark'}`
+        }).catch(error => console.error('Erro ao salvar tema:', error));
+      });
+    });
+  </script>
+</body>
+</html>

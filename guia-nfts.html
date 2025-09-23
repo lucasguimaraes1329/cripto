@@ -1,62 +1,61 @@
 <?php include("theme.php"); ?>
 <!DOCTYPE html>
-<html lang="pt-BR" class="<?php echo isset($theme) ? htmlspecialchars($theme) : ''; ?>">
+<html lang="pt-BR" class="<?php echo isset($theme) ? htmlspecialchars($theme) : 'dark-mode'; ?>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedores - CriptoFuturo</title>
+  <meta name="description" content="Guia sobre NFTs em 2025: tendências, criação e investimento.">
+  <title>NFTs em 2025: Guia Atualizado para Criação e Investimento - CriptoFuturo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Header -->
   <header>
-    <div class="logo">Cripto<span>Futuro</span></div>
+    <div class="logo" aria-label="Logo CriptoFuturo">Cripto<span>Futuro</span></div>
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="noticias.html">Notícias</a></li>
         <li><a href="comparador.html">Comparador</a></li>
-        <li><a href="guias.html">Guias</a></li>
+        <li><a href="guias.html" class="ativo" aria-current="page">Guias</a></li>
         <li><a href="contato.html">Contato</a></li>
         <li><a href="simulador.html">Simulador</a></li>
-        <li><a href="desenvolvedores.html" class="ativo">Desenvolvedores</a></li>
+        <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
       </ul>
     </nav>
     <button id="toggle-theme" aria-label="Alternar tema">🌙</button>
   </header>
 
-  <!-- Conteúdo -->
-  <main class="conteudo desenvolvedores">
-    <h1>👨‍💻 Equipe de Desenvolvedores</h1>
-    <p class="intro">
-      Conheça os integrantes responsáveis pela criação do <strong>CriptoFuturo</strong>.
-    </p>
+  <!-- Conteúdo do Guia -->
+  <main class="guia-detalhe">
+    <h1>NFTs em 2025: O Guia Definitivo</h1>
 
-    <div class="dev-grid">
-      <!-- Integrante 1 -->
-      <div class="dev-card">
-        <img src="img/lucas.jpg" alt="Foto de Lucas Gabriel">
-        <h2>Lucas Gabriel</h2>
-        <p><strong>Turma:</strong> 2ºB Informática</p>
-        <p><strong>Interesse:</strong> Desenvolvimento Front-End</p>
-      </div>
+    <p>NFTs evoluíram de arte digital para utilidades reais em gaming, identidade e propriedade. Este guia atualizado cobre tendências de 2025.</p>
 
-      <!-- Integrante 2 -->
-      <div class="dev-card">
-        <img src="img/duda.jpg" alt="Foto de Maria Eduarda">
-        <h2>Maria Eduarda</h2>
-        <p><strong>Turma:</strong> 2ºB Informática</p>
-        <p><strong>Interesse:</strong> Segurança da Informação</p>
-      </div>
-
-      <!-- Integrante 3 -->
-      <div class="dev-card">
-        <img src="img/mateus.jpg" alt="Foto de Mateus Eduardo">
-        <h2>Mateus Eduardo</h2>
-        <p><strong>Turma:</strong> 2ºB Informática</p>
-        <p><strong>Interesse:</strong> Blockchain & Criptoativos</p>
-      </div>
+    <div class="guia-secao">
+      <h2>O que São NFTs?</h2>
+      <ul class="guia-lista">
+        <li>Tokens não fungíveis únicos na blockchain, representando ativos digitais.</li>
+        <li>Usos: arte, música, colecionáveis e acesso a eventos.</li>
+        <li>Plataformas principais: OpenSea, Blur e Magic Eden.</li>
+      </ul>
     </div>
+
+    <div class="guia-secao">
+      <h2>Como Criar um NFT</h2>
+      <ul class="guia-lista">
+        <li>Escolha uma blockchain (Ethereum, Solana ou Polygon).</li>
+        <li>Use ferramentas como OpenSea Studio ou Manifold.</li>
+        <li>Pague gas fees e liste no marketplace.</li>
+      </ul>
+    </div>
+
+    <div class="guia-secao">
+      <h2>Investindo em NFTs</h2>
+      <p>Em 2025, foque em projetos com utilidade real, como NFTs de gaming metaverso. Diversifique e pesquise comunidades fortes.</p>
+    </div>
+
+    <a href="guias.html" class="btn-voltar">← Voltar aos Guias</a>
   </main>
 
   <!-- Footer -->
@@ -64,7 +63,6 @@
     <p class="copy">© 2025 CriptoFuturo - Todos os direitos reservados</p>
   </footer>
 
-  <!-- Script de tema -->
   <script>
     function getCookie(name) {
       const value = `; ${document.cookie}`;
@@ -94,7 +92,7 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: `theme=${isLight ? 'light' : 'dark'}`
-        });
+        }).catch(error => console.error('Erro ao salvar tema:', error));
       });
     });
   </script>
