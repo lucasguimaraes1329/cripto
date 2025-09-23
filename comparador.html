@@ -21,6 +21,31 @@
       GBP: 0.78
     };
 
+    // Função do Comparador
+    function comparar() {
+      const moeda1 = document.getElementById("moeda1").value;
+      const moeda2 = document.getElementById("moeda2").value;
+
+      if (moeda1 === moeda2) {
+        document.getElementById("resultadoComparacao").innerHTML = "<p>Selecione duas moedas diferentes para comparar.</p>";
+        return;
+      }
+
+      const valor1 = taxas[moeda1];
+      const valor2 = taxas[moeda2];
+
+      const diferenca = valor1 - valor2;
+      const percentual = ((diferenca / valor2) * 100).toFixed(2);
+
+      let resultado = `<h3>Resultado da Comparação</h3>`;
+      resultado += `<p><strong>${moeda1}:</strong> $${valor1.toLocaleString()}</p>`;
+      resultado += `<p><strong>${moeda2}:</strong> $${valor2.toLocaleString()}</p>`;
+      resultado += `<p><strong>Diferença:</strong> $${diferenca.toLocaleString()} (${percentual}%)</p>`;
+
+      document.getElementById("resultadoComparacao").innerHTML = resultado;
+    }
+
+    // Função do Conversor
     function converter() {
       const cripto = document.getElementById("cripto").value;
       const valor = parseFloat(document.getElementById("valor").value);
@@ -55,36 +80,39 @@
         <li><a href="comparador.html" class="ativo">Comparador</a></li>
         <li><a href="guias.html">Guias</a></li>
         <li><a href="contato.html">Contato</a></li>
+        <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- COMPARADOR -->
   <section class="conteudo">
     <h1>Comparador de Criptomoedas</h1>
     <p>Selecione duas criptomoedas para comparar preços e variações.</p>
     <div class="comparador-box">
       <div class="comparador-form">
-        <select>
-          <option>BTC</option>
-          <option>ETH</option>
-          <option>SOL</option>
-          <option>DOGE</option>
+        <select id="moeda1">
+          <option value="BTC">BTC</option>
+          <option value="ETH">ETH</option>
+          <option value="SOL">SOL</option>
+          <option value="DOGE">DOGE</option>
         </select>
-        <select>
-          <option>ETH</option>
-          <option>BTC</option>
-          <option>SOL</option>
-          <option>DOGE</option>
+        <select id="moeda2">
+          <option value="ETH">ETH</option>
+          <option value="BTC">BTC</option>
+          <option value="SOL">SOL</option>
+          <option value="DOGE">DOGE</option>
         </select>
-        <button>Comparar</button>
+        <button onclick="comparar()">Comparar</button>
       </div>
-      <div class="resultado">
+      <div class="resultado" id="resultadoComparacao">
         <h3>Resultado</h3>
         <p>Escolha duas moedas para visualizar a comparação.</p>
       </div>
     </div>
   </section>
 
+  <!-- CONVERSOR -->
   <section class="conteudo">
     <h1>Conversor de Criptomoedas</h1>
     <p>Converta de criptomoedas para Real, Dólar, Euro e Libra.</p>
