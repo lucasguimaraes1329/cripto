@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guias - CriptoFuturo</title>
+  <title>DeFi explicado - CriptoFuturo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,63 +17,53 @@
         <li><a href="comparador.html">Comparador</a></li>
         <li><a href="guias.html" class="ativo">Guias</a></li>
         <li><a href="contato.html">Contato</a></li>
-<<<<<<< HEAD
-=======
-        <li><a href="simulador.html">Simulador</a></li>
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
-        <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
       </ul>
     </nav>
-    <button id="toggle-theme">🌙</button>
-    </header>
-    <h1>Guias Educacionais</h1>
-    <div class="cards">
-      <div class="card guia">
-        <a href="guia-blockchain.html">
-<<<<<<< HEAD
-          <img src="img/blockchain.webp" alt="Regulamentações">
-=======
-          <img src="img/blockchain.webp" alt="Blockchain">
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
-          <h3>O que é Blockchain?</h3>
-        </a>
-      </div>
-      <div class="card guia">
-<<<<<<< HEAD
-        <a href="guia-investir.html">
-          <img src="img/seguranca.jpg" alt="Regulamentações">
-=======
-        <a href="guia-investimento.html">
-          <img src="img/seguranca.jpg" alt="Investimento seguro">
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
-          <h3>Como investir em criptomoedas com segurança</h3>
-        </a>
-      </div>
-      <div class="card guia">
-<<<<<<< HEAD
-        <a href="guia-delfi.html">
-          <img src="img/defi.jpg" alt="Regulamentações">
-=======
-        <a href="guia-defi.html">
-          <img src="img/defi.jpg" alt="DeFi">
->>>>>>> 4e48532049a3a569054c38a61f0e0cebd01a3d57
-          <h3>DeFi explicado</h3>
-        </a>
-      </div>
-    </div>
-  </section>
+  </header>
+
+  <main class="conteudo guia-detalhe">
+    <article>
+      <h1>💡 DeFi explicado</h1>
+      <p>
+        O termo <strong>DeFi</strong> significa <em>Finanças Descentralizadas</em>. Ele se refere a um ecossistema de 
+        aplicativos financeiros construídos sobre blockchain, sem a necessidade de intermediários como bancos 
+        ou corretoras.
+      </p>
+
+      <section class="guia-secao">
+        <h2>🔑 Como funciona?</h2>
+        <p>
+          O DeFi utiliza <strong>smart contracts</strong> (contratos inteligentes) para automatizar transações e serviços. 
+          Isso inclui empréstimos, trocas de ativos, seguros e até sistemas de poupança digital.
+        </p>
+      </section>
+
+      <section class="guia-secao">
+        <h2>🌍 Benefícios</h2>
+        <ul class="guia-lista">
+          <li>⚡ <strong>Acessibilidade:</strong> qualquer pessoa com internet pode participar.</li>
+          <li>💸 <strong>Custos menores:</strong> elimina taxas de intermediários.</li>
+          <li>🔒 <strong>Transparência:</strong> tudo é registrado na blockchain.</li>
+          <li>🌐 <strong>Global:</strong> transações em qualquer lugar do mundo.</li>
+        </ul>
+      </section>
+
+      <section class="guia-secao">
+        <h2>⚠️ Riscos</h2>
+        <ul class="guia-lista">
+          <li>🐞 <strong>Bugs em smart contracts</strong> podem comprometer fundos.</li>
+          <li>📉 <strong>Alta volatilidade</strong> dos ativos envolvidos.</li>
+          <li>⚖️ <strong>Falta de regulamentação</strong> em muitos países.</li>
+        </ul>
+      </section>
+
+      <a href="guias.html" class="btn-voltar">← Voltar para Guias</a>
+    </article>
+  </main>
 
   <footer>
     <p class="copy">© 2025 CriptoFuturo - Todos os direitos reservados</p>
   </footer>
-
-    <script>
-    const btnTheme = document.getElementById("toggle-theme");
-    btnTheme.addEventListener("click", () => {
-      document.body.classList.toggle("light-mode");
-      btnTheme.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
-    });
-  </script>
 </body>
 <script>
   function getCookie(name) {
@@ -82,6 +72,7 @@
     if (parts.length === 2) return parts.pop().split(';').shift();
     return null;
   }
+  const btnTheme = document.getElementById("toggle-theme");
   window.addEventListener('DOMContentLoaded', () => {
     const theme = getCookie('site_theme');
     if (theme === 'light') {
