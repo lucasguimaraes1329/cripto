@@ -55,6 +55,26 @@
 
   <!-- Footer -->
   <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="index.php">Início</a></li>
+          <li><a href="noticias.php">Notícias</a></li>
+          <li><a href="comparador.htphpml">Comparador</a></li>
+          <li><a href="guias.php">Guias</a></li>
+          <li><a href="contato.php">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Siga-nos</h4>
+        <ul>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
     <p class="copy">© 2025 CriptoFuturo - Todos os direitos reservados</p>
   </footer>
 
