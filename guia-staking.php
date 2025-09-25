@@ -14,13 +14,13 @@
     <div class="logo" aria-label="Logo CriptoFuturo">Cripto<span>Futuro</span></div>
     <nav>
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-        <li><a href="comparador.html">Comparador</a></li>
-        <li><a href="guias.html" class="ativo" aria-current="page">Guias</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="simulador.html">Simulador</a></li>
-        <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
+        <li><a href="index.php">Início</a></li>
+        <li><a href="noticias.php">Notícias</a></li>
+        <li><a href="comparador.php">Comparador</a></li>
+        <li><a href="guias.php" class="ativo" aria-current="page">Guias</a></li>
+        <li><a href="contato.php">Contato</a></li>
+        <li><a href="simulador.php">Simulador</a></li>
+        <li><a href="desenvolvedores.php">Desenvolvedores</a></li>
       </ul>
     </nav>
     <button id="toggle-theme" aria-label="Alternar tema">🌙</button>
@@ -67,7 +67,7 @@
       <p>Escolha uma moeda PoS, configure uma wallet compatível (ex.: MetaMask para ETH), e selecione uma plataforma de staking. Comece com valores pequenos e monitore os retornos regularmente.</p>
     </div>
 
-    <a href="guias.html" class="btn-voltar">← Voltar aos Guias</a>
+    <a href="guias.php" class="btn-voltar">← Voltar aos Guias</a>
   </main>
 
   <!-- Footer -->

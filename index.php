@@ -13,13 +13,13 @@
     <div class="logo" aria-label="Logo CriptoFuturo">Cripto<span>Futuro</span></div>
     <nav>
       <ul>
-        <li><a href="index.html" class="ativo" aria-current="page">Início</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-        <li><a href="comparador.html">Comparador</a></li>
-        <li><a href="guias.html">Guias</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="simulador.html">Simulador</a></li>
-        <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
+        <li><a href="index.php" class="ativo" aria-current="page">Início</a></li>
+        <li><a href="noticias.php">Notícias</a></li>
+        <li><a href="comparador.php">Comparador</a></li>
+        <li><a href="guias.php">Guias</a></li>
+        <li><a href="contato.php">Contato</a></li>
+        <li><a href="simulador.php">Simulador</a></li>
+        <li><a href="desenvolvedores.php">Desenvolvedores</a></li>
       </ul>
     </nav>
     <button id="toggle-theme" aria-label="Alternar tema">🌙</button>
@@ -31,8 +31,8 @@
       <h1>O futuro das finanças<br>em um só lugar</h1>
       <p>Acompanhe preços, tendências, notícias e aprenda tudo sobre criptomoedas.</p>
       <div class="hero-buttons">
-        <a href="noticias.html" class="btn roxo">Ver Notícias</a>
-        <a href="comparador.html" class="btn verde">Comparar Moedas</a>
+        <a href="noticias.php" class="btn roxo">Ver Notícias</a>
+        <a href="comparador.php" class="btn verde">Comparar Moedas</a>
       </div>
     </div>
   </section>
@@ -87,21 +87,21 @@
     <h2>📰 Últimas notícias</h2>
     <div class="cards">
       <div class="card">
-        <a href="noticia-bitcoin.html">
+        <a href="noticia-bitcoin.php">
           <img src="img/bitcoin.webp" alt="Notícia sobre Bitcoin">
           <h3>Bitcoin ultrapassa nova máxima histórica</h3>
           <p>Investidores celebram a nova máxima histórica do BTC...</p>
         </a>
       </div>
       <div class="card">
-        <a href="noticia-ethereum.html">
+        <a href="noticia-ethereum.php">
           <img src="img/ethereum.jpg" alt="Notícia sobre Ethereum">
           <h3>Ethereum 2.0 traz mudanças para o mercado</h3>
           <p>A atualização promete taxas menores e maior escalabilidade...</p>
         </a>
       </div>
       <div class="card">
-        <a href="noticia-regulamentacoes.html">
+        <a href="noticia-regulamentacoes.php">
           <img src="img/regulamentacoes.jpg" alt="Notícia sobre regulamentações">
           <h3>Novas regulamentações podem impactar investidores</h3>
           <p>Medidas de fiscalização podem mudar a forma como investidores atuam...</p>
@@ -115,19 +115,19 @@
     <h2>📘 Guias Educacionais</h2>
     <div class="cards">
       <div class="card guia">
-        <a href="guia-blockchain.html">
+        <a href="guia-blockchain.php">
           <img src="img/blockchain.webp" alt="Guia sobre Blockchain">
           <h3>O que é Blockchain?</h3>
         </a>
       </div>
       <div class="card guia">
-        <a href="guia-investimento.html">
+        <a href="guia-investimento.php">
           <img src="img/seguranca.jpg" alt="Guia sobre investimento seguro">
           <h3>Como investir em criptomoedas com segurança</h3>
         </a>
       </div>
       <div class="card guia">
-        <a href="guia-defi.html">
+        <a href="guia-defi.php">
           <img src="img/defi.jpg" alt="Guia sobre DeFi">
           <h3>DeFi explicado</h3>
         </a>

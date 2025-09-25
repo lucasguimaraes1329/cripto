@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ethereum 2.0 traz mudanças para o mercado - CriptoFuturo</title>
+  <title>Bitcoin ultrapassa nova máxima histórica - CriptoFuturo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,11 +12,11 @@
     <div class="logo">Cripto<span>Futuro</span></div>
     <nav>
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="noticias.html" class="ativo">Notícias</a></li>
-        <li><a href="comparador.html">Comparador</a></li>
-        <li><a href="guias.html">Guias</a></li>
-        <li><a href="contato.html">Contato</a></li>
+        <li><a href="index.php">Início</a></li>
+        <li><a href="noticias.php" class="ativo">Notícias</a></li>
+        <li><a href="comparador.php">Comparador</a></li>
+        <li><a href="guias.php">Guias</a></li>
+        <li><a href="contato.php">Contato</a></li>
       </ul>
     </nav>
   </header>
@@ -24,34 +24,37 @@
   <main>
     <section class="materia">
       <div class="hero-materia">
-        <img src="img/ethereum.jpg" alt="Ethereum 2.0">
-        <h1>Ethereum 2.0 traz mudanças para o mercado</h1>
-        <p class="subtitulo">A atualização mais esperada do Ethereum promete menor consumo de energia e maior escalabilidade.</p>
+        <img src="img/bitcoin.webp" alt="Bitcoin recorde">
+        <h1>Bitcoin ultrapassa nova máxima histórica</h1>
+        <p class="subtitulo">A maior criptomoeda do mundo superou os <strong>$70.000</strong>, impulsionada pela entrada de investidores institucionais e ETFs.</p>
       </div>
 
       <div class="resumo">
         <h3>📌 Pontos-chave</h3>
         <ul>
-          <li>Transição de Proof of Work (PoW) para Proof of Stake (PoS).</li>
-          <li>Redução do consumo de energia em 99%.</li>
-          <li>Escalabilidade e taxas menores.</li>
+          <li>Bitcoin bate recorde acima dos $70.000.</li>
+          <li>Investidores institucionais impulsionam a alta.</li>
+          <li>Especialistas alertam sobre volatilidade.</li>
         </ul>
       </div>
 
       <article>
         <p>
-          O <strong>Ethereum 2.0</strong> finalmente chegou, marcando uma mudança histórica no segundo maior blockchain do mundo. 
-          A transição do <em>Proof of Work</em> para o <em>Proof of Stake</em> trouxe não apenas maior eficiência, mas também 
-          um impacto ambiental positivo, com redução de mais de <strong>99% no consumo de energia</strong>.
+          O <strong>Bitcoin (BTC)</strong> atingiu uma nova máxima histórica, ultrapassando os <strong>$70.000</strong>. O movimento reflete a 
+          <em>confiança crescente</em> de investidores institucionais e a popularidade de ETFs que permitem exposição à criptomoeda.
+        </p>
+
+        <p>
+          Segundo analistas, a alta também foi alimentada pela <strong>demanda de varejo</strong>, com milhões de novos investidores entrando no mercado 
+          nos últimos meses.
         </p>
 
         <blockquote>
-          “Essa mudança era fundamental para garantir a sustentabilidade a longo prazo do Ethereum.” — <em>Marina Costa, desenvolvedora blockchain</em>.
+          “Estamos vendo um ciclo diferente, com mais maturidade no mercado e maior participação institucional.” — <em>Lucas Andrade, analista de criptoativos</em>.
         </blockquote>
 
         <p>
-          Além disso, os usuários já estão percebendo <strong>melhorias nas taxas de transação</strong> e um aumento na capacidade da rede, 
-          o que deve abrir espaço para novos projetos DeFi e NFTs.
+          No entanto, especialistas lembram que o mercado cripto continua <strong>altamente volátil</strong> e recomendam cautela, especialmente para investidores iniciantes.
         </p>
       </article>
     </section>
@@ -62,11 +65,11 @@
       <div class="footer-col">
         <h4>Links</h4>
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="noticias.html">Notícias</a></li>
-          <li><a href="comparador.html">Comparador</a></li>
-          <li><a href="guias.html">Guias</a></li>
-          <li><a href="contato.html">Contato</a></li>
+          <li><a href="index.php">Início</a></li>
+          <li><a href="noticias.php">Notícias</a></li>
+          <li><a href="comparador.htphpml">Comparador</a></li>
+          <li><a href="guias.php">Guias</a></li>
+          <li><a href="contato.php">Contato</a></li>
         </ul>
       </div>
       <div class="footer-col">

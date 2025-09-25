@@ -12,13 +12,13 @@
     <div class="logo" aria-label="Logo CriptoFuturo">Cripto<span>Futuro</span></div>
     <nav>
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="noticias.html" class="ativo" aria-current="page">Notícias</a></li>
-        <li><a href="comparador.html">Comparador</a></li>
-        <li><a href="guias.html">Guias</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="simulador.html">Simulador</a></li>
-        <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
+        <li><a href="index.php">Início</a></li>
+        <li><a href="noticias.php" class="ativo" aria-current="page">Notícias</a></li>
+        <li><a href="comparador.php">Comparador</a></li>
+        <li><a href="guias.php">Guias</a></li>
+        <li><a href="contato.php">Contato</a></li>
+        <li><a href="simulador.php">Simulador</a></li>
+        <li><a href="desenvolvedores.php">Desenvolvedores</a></li>
       </ul>
     </nav>
     <button id="toggle-theme" aria-label="Alternar tema">🌙</button>

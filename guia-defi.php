@@ -13,11 +13,11 @@
     <div class="logo">Cripto<span>Futuro</span></div>
     <nav>
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-        <li><a href="comparador.html">Comparador</a></li>
-        <li><a href="guias.html" class="ativo">Guias</a></li>
-        <li><a href="contato.html">Contato</a></li>
+        <li><a href="index.php">Início</a></li>
+        <li><a href="noticias.php">Notícias</a></li>
+        <li><a href="comparador.php">Comparador</a></li>
+        <li><a href="guias.php" class="ativo">Guias</a></li>
+        <li><a href="contato.php">Contato</a></li>
       </ul>
     </nav>
     <button id="toggle-theme" aria-label="Alternar tema">🌙</button>
@@ -60,7 +60,7 @@
         </ul>
       </section>
 
-      <a href="guias.html" class="btn-voltar">← Voltar para Guias</a>
+      <a href="guias.php" class="btn-voltar">← Voltar para Guias</a>
     </article>
   </main>
 

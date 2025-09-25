@@ -14,13 +14,13 @@
   <div class="logo" aria-label="Logo CriptoFuturo">Cripto<span>Futuro</span></div>
   <nav>
     <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="noticias.html" class="ativo" aria-current="page">Notícias</a></li>
-      <li><a href="comparador.html">Comparador</a></li>
-      <li><a href="guias.html">Guias</a></li>
-      <li><a href="contato.html">Contato</a></li>
-      <li><a href="simulador.html">Simulador</a></li>
-      <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
+      <li><a href="index.php">Início</a></li>
+      <li><a href="noticias.php" class="ativo" aria-current="page">Notícias</a></li>
+      <li><a href="comparador.php">Comparador</a></li>
+      <li><a href="guias.php">Guias</a></li>
+      <li><a href="contato.php">Contato</a></li>
+      <li><a href="simulador.php">Simulador</a></li>
+      <li><a href="desenvolvedores.php">Desenvolvedores</a></li>
     </ul>
   </nav>
   <button id="toggle-theme" aria-label="Alternar tema">🌙</button>
@@ -31,42 +31,42 @@
       <h1>Últimas Notícias</h1>
       <div class="cards">
         <div class="card">
-          <a href="noticia-bitcoin.html">
+          <a href="noticia-bitcoin.php">
             <img src="img/bitcoin.webp" alt="Bitcoin">
             <h3>Bitcoin ultrapassa nova máxima histórica</h3>
             <p>Investidores celebram a nova máxima histórica do BTC...</p>
           </a>
         </div>
         <div class="card">
-          <a href="noticia-ethereum.html">
+          <a href="noticia-ethereum.php">
             <img src="img/ethereum.jpg" alt="Ethereum">
             <h3>Ethereum 2.0 traz mudanças para o mercado</h3>
             <p>A atualização promete taxas menores e maior escalabilidade...</p>
           </a>
         </div>
         <div class="card">
-          <a href="noticia-regulamentacoes.html">
+          <a href="noticia-regulamentacoes.php">
             <img src="img/regulamentacoes.jpg" alt="Regulamentações">
             <h3>Novas regulamentações podem impactar investidores</h3>
             <p>Medidas de fiscalização podem mudar a forma como investidores atuam...</p>
           </a>
         </div>
         <div class="card">
-          <a href="noticia-solana.html">
+          <a href="noticia-solana.php">
             <img src="img/solana.jpg" alt="Solana">
             <h3>Solana enfrenta nova interrupção de rede e perde US$ 2 bilhões em valor de mercado</h3>
             <p>A blockchain de alta velocidade sofreu uma queda de 8 horas...</p>
           </a>
         </div>
         <div class="card">
-          <a href="noticia-etfs.html">
+          <a href="noticia-etfs.php">
             <img src="img/efts.webp" alt="Solana">
             <h3>ETFs de Ethereum finalmente aprovados pela SEC: Impacto no mercado</h3>
             <p>A decisão histórica abre portas para bilhões em investimentos institucionais...</p>
           </a>
         </div>
         <div class="card">
-          <a href="noticia-ia.html">
+          <a href="noticia-ia.php">
             <img src="img/ia.jpg" alt="Solana">
             <h3>IA e Cripto: Projetos de inteligência artificial explodem no mercado, com ganhos de até 500%</h3>
             <p>A fusão de IA e blockchain cria novos tokens que atraem bilhões...</p>

@@ -12,11 +12,11 @@
     <div class="logo">Cripto<span>Futuro</span></div>
     <nav>
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="noticias.html" class="ativo">Notícias</a></li>
-        <li><a href="comparador.html">Comparador</a></li>
-        <li><a href="guias.html">Guias</a></li>
-        <li><a href="contato.html">Contato</a></li>
+        <li><a href="index.php">Início</a></li>
+        <li><a href="noticias.php" class="ativo">Notícias</a></li>
+        <li><a href="comparador.php">Comparador</a></li>
+        <li><a href="guias.php">Guias</a></li>
+        <li><a href="contato.php">Contato</a></li>
       </ul>
     </nav>
     <button id="toggle-theme" aria-label="Alternar tema">🌙</button>
@@ -58,11 +58,11 @@
       <div class="footer-col">
         <h4>Links</h4>
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="noticias.html">Notícias</a></li>
-          <li><a href="comparador.html">Comparador</a></li>
-          <li><a href="guias.html">Guias</a></li>
-          <li><a href="contato.html">Contato</a></li>
+          <li><a href="index.php">Início</a></li>
+          <li><a href="noticias.php">Notícias</a></li>
+          <li><a href="comparador.php">Comparador</a></li>
+          <li><a href="guias.php">Guias</a></li>
+          <li><a href="contato.php">Contato</a></li>
         </ul>
       </div>
       <div class="footer-col">
